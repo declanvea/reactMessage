@@ -8,9 +8,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <BaseLayout>
-        <ParentComponent />
-        </BaseLayout>
 
+        </BaseLayout>
       </div>
     );
   }
