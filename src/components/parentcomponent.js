@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/App.css';
 import ChildComponent from './childcomponent';
 import DisplayComponent from './displaycomponent';
+import { Form, FormGroup, Input} from 'reactstrap';
 
 export default class ParentComponent extends React.Component {
   constructor(props){
@@ -38,16 +39,20 @@ export default class ParentComponent extends React.Component {
 
   render() {
     return (
-      <div>
+    <div>
       {/*Smart Component: I have a function, but something isn't working? I also need to pass that function to the ChildComponent.*/}
+      <Form>
+        <FormGroup>
+          <Input id="exampleEmail" value={this.state.whatToSay} onChange={this.handleInput} type="text" placeholder="Say It, Don't Spray It!"  />
+        </FormGroup>
         <div>
-          <input value={this.state.whatToSay} onChange={this.handleInput} type="text" placeholder="Say It, Don't Spray It!" />
         </div>
         <div>
           <ChildComponent onClick={this.handleSubmit}/>
           <DisplayComponent sayWhat={this.state.whatWasSaid} />
         </div>
-      </div>
+     </Form>
+    </div>
     );
   }
 }
